@@ -2,7 +2,7 @@ interface AISatellitesPanelProps {
   theme?: "light" | "dark";
 }
 
-export function AISatellitesPanel({ theme = "dark" }: AISatellitesPanelProps) {
+export function AISatellitesPanel({ theme: _theme = "dark" }: AISatellitesPanelProps) {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">AI Assistant</h3>

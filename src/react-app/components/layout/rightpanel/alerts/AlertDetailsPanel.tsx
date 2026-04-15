@@ -2,7 +2,7 @@ interface AlertDetailsPanelProps {
   theme?: "light" | "dark";
 }
 
-export function AlertDetailsPanel({ theme = "dark" }: AlertDetailsPanelProps) {
+export function AlertDetailsPanel({ theme: _theme = "dark" }: AlertDetailsPanelProps) {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Alert Details</h3>

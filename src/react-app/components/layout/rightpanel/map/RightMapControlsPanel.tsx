@@ -2,7 +2,7 @@ interface RightMapControlsPanelProps {
   theme?: "light" | "dark";
 }
 
-export function RightMapControlsPanel({ theme = "dark" }: RightMapControlsPanelProps) {
+export function RightMapControlsPanel({ theme: _theme = "dark" }: RightMapControlsPanelProps) {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Map Controls</h3>

@@ -2,7 +2,7 @@ interface StreamInfoPanelProps {
   theme?: "light" | "dark";
 }
 
-export function StreamInfoPanel({ theme = "dark" }: StreamInfoPanelProps) {
+export function StreamInfoPanel({ theme: _theme = "dark" }: StreamInfoPanelProps) {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Stream Info</h3>

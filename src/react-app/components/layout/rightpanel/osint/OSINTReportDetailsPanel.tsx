@@ -2,7 +2,7 @@ interface OSINTReportDetailsPanelProps {
   theme?: "light" | "dark";
 }
 
-export function OSINTReportDetailsPanel({ theme = "dark" }: OSINTReportDetailsPanelProps) {
+export function OSINTReportDetailsPanel({ theme: _theme = "dark" }: OSINTReportDetailsPanelProps) {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Report Details</h3>

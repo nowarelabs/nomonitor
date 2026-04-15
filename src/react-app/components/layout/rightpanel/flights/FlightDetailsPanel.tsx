@@ -2,7 +2,7 @@ interface FlightDetailsPanelProps {
   theme?: "light" | "dark";
 }
 
-export function FlightDetailsPanel({ theme = "dark" }: FlightDetailsPanelProps) {
+export function FlightDetailsPanel({ theme: _theme = "dark" }: FlightDetailsPanelProps) {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Flight Details</h3>

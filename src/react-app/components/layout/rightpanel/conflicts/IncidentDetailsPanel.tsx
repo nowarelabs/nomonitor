@@ -2,7 +2,7 @@ interface IncidentDetailsPanelProps {
   theme?: "light" | "dark";
 }
 
-export function IncidentDetailsPanel({ theme = "dark" }: IncidentDetailsPanelProps) {
+export function IncidentDetailsPanel({ theme: _theme = "dark" }: IncidentDetailsPanelProps) {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Incident Details</h3>
