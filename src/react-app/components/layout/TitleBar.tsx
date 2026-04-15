@@ -6,17 +6,13 @@ import {
   Undo2,
   Redo2,
   Trash2,
-  Code,
   LayoutGrid,
-  Play,
   Sun,
   Moon,
   PanelLeftClose,
   PanelRightClose,
   Sparkles,
   Settings,
-  Database,
-  FileText,
   Map,
   Plane,
   Satellite,
@@ -85,8 +81,6 @@ export function TitleBar({
   const iconButtonStyle = theme === 'dark'
     ? "inline-flex items-center justify-center h-8 w-8 text-sm font-medium border border-neutral-700 bg-neutral-800 shadow-sm hover:bg-neutral-700 hover:border-neutral-600 text-neutral-200 rounded-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1"
     : "inline-flex items-center justify-center h-8 w-8 text-sm font-medium border border-gray-200 bg-white shadow-sm hover:bg-gray-100 hover:border-gray-300 text-gray-700 rounded-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1";
-
-  const viewModeButtonBaseStyle = "inline-flex items-center justify-center p-2 rounded-md transition-all";
 
   return (
     <div className={`flex items-center gap-2 px-3 py-2 border-b ${theme === 'dark' ? 'border-neutral-800 bg-neutral-900' : 'border-gray-200 bg-white'}`}>

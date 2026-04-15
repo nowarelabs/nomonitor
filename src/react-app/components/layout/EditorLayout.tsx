@@ -8,12 +8,8 @@ import { LeftPanel } from "./leftpanel";
 import { RightPanel } from "./rightpanel";
 import { RightMostPanel } from "./rightmostpanel";
 import { 
-  LayoutGrid, Code2, FolderTree, Package, Layers, Box, GitBranch, Workflow, Puzzle, Zap, Settings,
-  Play, Database, FileText, Search, Filter, SortAsc, Save, Undo2, Redo2, Trash2, Copy, Clipboard,
-  ZoomIn, ZoomOut, Maximize2, Grid3X3, Clock, CheckCircle, AlertCircle, Info, XCircle,
-  Square, Type, Pencil, Stamp, Ruler, Bug, Terminal, Bookmark, List, Smartphone, RefreshCw,
-  Palette, Wifi, AlertTriangle, Gauge, Download, ArrowRight, Pin, Tag, Folder, Archive, Share2,
-  Plus, Hand, Map, MapPin, Plane, Satellite, Radio, Crosshair, Anchor, Navigation, DollarSign,
+  Layers, Search, Filter, AlertTriangle, AlertCircle, Info, RefreshCw, Download, ArrowRight,
+  Play, FileText, Map, MapPin, Plane, Satellite, Radio, Crosshair, Anchor, Navigation, DollarSign,
   TrendingUp, Activity, Users, UserCheck, Bell, Globe, BarChart, Cloud, Shield
 } from "lucide-react";
 
@@ -239,8 +235,6 @@ export function EditorLayout({
   onToggleGrid,
   viewMode,
   onSelectViewMode,
-  viewModeOptions,
-  viewModeLabels,
 }: EditorLayoutProps) {
   const [currentViewMode, setCurrentViewMode] = useQueryState("viewMode", {
     defaultValue: viewMode || "map",
@@ -284,14 +278,7 @@ export function EditorLayout({
     onSelectViewMode?.(mode);
   };
   
-  const getCurrentViewModeLabel = () => {
-    if (viewModeLabels && currentViewMode && viewModeLabels[currentViewMode]) {
-      return viewModeLabels[currentViewMode].label;
-    }
-    return config.navigation.find(n => n.id === activeNavId)?.label || activeNavItem?.label || currentMode;
-  };
-
-  const toggleTheme = () => {
+const toggleTheme = () => {
     onThemeChange?.(theme === "light" ? "dark" : "light");
   };
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Header, Sidebar, StatsCards, KenyaMap, FlightTracker, SatelliteTracker, LiveStreams, EconomicIndicators, ConflictStream, AlertsPanel, OSINTData } from "./index";
 
 interface Alert {
@@ -73,7 +73,6 @@ export function Dashboard({ theme = "dark" }: DashboardProps) {
   const [showConflicts, setShowConflicts] = useState(true);
   const [showFlights, setShowFlights] = useState(true);
   const [showSatellites, setShowSatellites] = useState(true);
-  const [searchQuery, setSearchQuery] = useState("");
 
   const renderPanel = () => {
     switch (activePanel) {
@@ -132,7 +131,6 @@ export function Dashboard({ theme = "dark" }: DashboardProps) {
     <div className={`flex flex-col h-screen ${theme === "dark" ? "bg-neutral-950" : "bg-gray-50"}`}>
       <Header
         theme={theme}
-        onSearch={setSearchQuery}
         alertsCount={mockAlerts.length}
       />
       

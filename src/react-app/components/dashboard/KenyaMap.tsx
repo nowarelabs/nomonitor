@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { useState } from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
-import { AlertTriangle, Plane, Satellite, Crosshair } from "lucide-react";
 import "leaflet/dist/leaflet.css";
 
 interface Alert {
@@ -102,7 +101,7 @@ export function KenyaMap({
   conflicts = [],
   flights = [],
   satellites = [],
-  showCounties = true,
+  showCounties: _showCounties = true,
   showAirports = true,
   showPorts = true,
   showAlerts = true,
@@ -110,9 +109,9 @@ export function KenyaMap({
   showFlights = true,
   showSatellites = true,
 }: KenyaMapProps) {
-  const [selectedAlert, setSelectedAlert] = useState<Alert | null>(null);
-  const [selectedFlight, setSelectedFlight] = useState<Flight | null>(null);
-  const [selectedSatellite, setSelectedSatellite] = useState<Satellite | null>(null);
+  const [_selectedAlert, setSelectedAlert] = useState<Alert | null>(null);
+  const [_selectedFlight, setSelectedFlight] = useState<Flight | null>(null);
+  const [_selectedSatellite, setSelectedSatellite] = useState<Satellite | null>(null);
 
   const kenyaCenter: [number, number] = [0.0236, 37.9062];
 
