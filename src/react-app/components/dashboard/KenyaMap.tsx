@@ -37,6 +37,8 @@ interface Satellite {
   lng: number;
 }
 
+
+
 const severityColors: Record<string, string> = {
   critical: "#ef4444",
   high: "#f97316",
@@ -56,27 +58,45 @@ const createAlertIcon = (severity: string) => {
 const createFlightIcon = () => {
   return L.divIcon({
     className: "custom-marker",
-    html: `<div style="color: #3b82f6; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));">✈️</div>`,
-    iconSize: [24, 24],
-    iconAnchor: [12, 12],
+    html: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" color="#3b82f6"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
   });
 };
 
 const createSatelliteIcon = () => {
   return L.divIcon({
     className: "custom-marker",
-    html: `<div style="color: #a855f7; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));">🛰️</div>`,
-    iconSize: [24, 24],
-    iconAnchor: [12, 12],
+    html: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/></svg>`,
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
   });
 };
 
 const createConflictIcon = () => {
   return L.divIcon({
     className: "custom-marker",
-    html: `<div style="background-color: #dc2626; width: 12px; height: 12px; transform: rotate(45deg); border: 1px solid white;"></div>`,
-    iconSize: [12, 12],
-    iconAnchor: [6, 6],
+    html: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
+  });
+};
+
+const createAirportIcon = () => {
+  return L.divIcon({
+    className: "custom-marker",
+    html: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="3"/><line x1="3" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="21"/></svg>`,
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
+  });
+};
+
+const createPortIcon = () => {
+  return L.divIcon({
+    className: "custom-marker",
+    html: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><path d="M3 21c3 0 6-3 6-6 0-4-6-6-6-6 0 0-3 3-3 6 0 3 3 6 3 6z"/><path d="M3 21c3 0 6 3 6-6 0-4-6-6-6-6 0 0-3 3-3 6 0 3 3 6 3 6z"/><line x1="12" y1="9" x2="12" y2="21"/></svg>`,
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
   });
 };
 
@@ -147,7 +167,7 @@ export function KenyaMap({
         
         {showAirports &&
           airports.map((airport, idx) => (
-            <Marker key={`airport-${idx}`} position={[airport.lat, airport.lng]}>
+            <Marker key={`airport-${idx}`} position={[airport.lat, airport.lng]} icon={createAirportIcon()}>
               <Popup>
                 <div className="text-gray-900">
                   <strong>{airport.name}</strong>
@@ -158,7 +178,7 @@ export function KenyaMap({
 
         {showPorts &&
           ports.map((port, idx) => (
-            <Marker key={`port-${idx}`} position={[port.lat, port.lng]}>
+            <Marker key={`port-${idx}`} position={[port.lat, port.lng]} icon={createPortIcon()}>
               <Popup>
                 <div className="text-gray-900">
                   <strong>{port.name}</strong>
@@ -258,31 +278,31 @@ export function KenyaMap({
           )}
           {showConflicts && conflicts.length > 0 && (
             <div className={`flex items-center gap-2 text-xs ${theme === "dark" ? "text-neutral-300" : "text-gray-700"}`}>
-              <div className="w-3 h-3 rotate-45 bg-red-600"></div>
+              <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
               <span>Conflicts ({conflicts.length})</span>
             </div>
           )}
           {showFlights && flights.length > 0 && (
             <div className={`flex items-center gap-2 text-xs ${theme === "dark" ? "text-neutral-300" : "text-gray-700"}`}>
-              <span className="text-xl">✈️</span>
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="#3b82f6"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               <span>Flights ({flights.length})</span>
             </div>
           )}
           {showSatellites && satellites.length > 0 && (
             <div className={`flex items-center gap-2 text-xs ${theme === "dark" ? "text-neutral-300" : "text-gray-700"}`}>
-              <span className="text-xl">🛰️</span>
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
               <span>Satellites ({satellites.length})</span>
             </div>
           )}
           {showAirports && (
             <div className={`flex items-center gap-2 text-xs ${theme === "dark" ? "text-neutral-300" : "text-gray-700"}`}>
-              <span className="text-xl">🛫</span>
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2"><circle cx="12" cy="12" r="3"/><line x1="3" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="21"/></svg>
               <span>Airports ({airports.length})</span>
             </div>
           )}
           {showPorts && (
             <div className={`flex items-center gap-2 text-xs ${theme === "dark" ? "text-neutral-300" : "text-gray-700"}`}>
-              <span className="text-xl">⚓</span>
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" strokeWidth="2"><path d="M3 21c3 0 6-3 6-6 0-4-6-6-6-6 0 0-3 3-3 6 0 3 3 6 3 6z"/><path d="M3 21c3 0 6 3 6-6 0-4-6-6-6-6 0 0-3 3-3 6 0 3 3 6 3 6z"/><line x1="12" y1="9" x2="12" y2="21"/></svg>
               <span>Ports ({ports.length})</span>
             </div>
           )}
