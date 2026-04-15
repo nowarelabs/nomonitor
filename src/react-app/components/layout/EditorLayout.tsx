@@ -348,7 +348,7 @@ export function EditorLayout({
               </button>
             </div>
             <div className="p-4">
-              <LeftPanel mode={currentMode} navId={activeNavId} theme={theme} />
+              <LeftPanel mode={currentMode} navId={activeNavId} />
             </div>
           </div>
         )}
@@ -390,7 +390,7 @@ export function EditorLayout({
               </button>
             </div>
             <div className="p-4">
-              <RightMostPanel mode={currentMode} theme={theme} />
+              <RightMostPanel mode={currentMode} />
             </div>
           </div>
         )}
