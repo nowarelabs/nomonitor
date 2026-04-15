@@ -1,8 +1,4 @@
-interface CriticalAlertsPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function CriticalAlertsPanel({ theme = "dark" }: CriticalAlertsPanelProps) {
+export function CriticalAlertsPanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Critical Alerts</h3>

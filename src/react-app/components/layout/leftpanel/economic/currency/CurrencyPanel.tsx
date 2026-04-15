@@ -1,8 +1,4 @@
-interface CurrencyPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function CurrencyPanel({ theme = "dark" }: CurrencyPanelProps) {
+export function CurrencyPanel() {
   const rates = [
     { pair: "KES/USD", rate: "153.45" },
     { pair: "KES/EUR", rate: "168.20" },

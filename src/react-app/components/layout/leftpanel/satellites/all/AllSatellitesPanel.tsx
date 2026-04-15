@@ -1,8 +1,4 @@
-interface AllSatellitesPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function AllSatellitesPanel({ theme = "dark" }: AllSatellitesPanelProps) {
+export function AllSatellitesPanel() {
   const satellites = [
     { name: "Landsat 8", type: "Earth Observation" },
     { name: "Sentinel-2A", type: "Earth Observation" },

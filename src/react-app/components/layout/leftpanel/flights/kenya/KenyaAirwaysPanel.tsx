@@ -12,11 +12,10 @@ interface FlightData {
 }
 
 interface KenyaAirwaysPanelProps {
-  theme?: "light" | "dark";
   flights?: FlightData[];
 }
 
-export function KenyaAirwaysPanel({ theme = "dark", flights = [] }: KenyaAirwaysPanelProps) {
+export function KenyaAirwaysPanel({ flights = [] }: KenyaAirwaysPanelProps) {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Kenya Airways</h3>

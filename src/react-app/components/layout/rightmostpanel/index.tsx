@@ -12,17 +12,16 @@ import { AIOSINTPanel } from "./osint/AIOSINTPanel";
 
 interface RightMostPanelProps {
   mode: ViewMode;
-  theme?: "light" | "dark";
 }
 
-export function RightMostPanel({ mode, theme = "dark" }: RightMostPanelProps): ReactNode {
-  if (mode === "map") return <AIAssistantMapPanel theme={theme} />;
-  if (mode === "flights") return <AIFlightsPanel theme={theme} />;
-  if (mode === "satellites") return <AISatellitesPanel theme={theme} />;
-  if (mode === "streams") return <AIStreamsPanel theme={theme} />;
-  if (mode === "economic") return <AIEconomicPanel theme={theme} />;
-  if (mode === "conflicts") return <AIConflictsPanel theme={theme} />;
-  if (mode === "alerts") return <AIAlertsPanel theme={theme} />;
-  if (mode === "osint") return <AIOSINTPanel theme={theme} />;
+export function RightMostPanel({ mode }: RightMostPanelProps): ReactNode {
+  if (mode === "map") return <AIAssistantMapPanel />;
+  if (mode === "flights") return <AIFlightsPanel />;
+  if (mode === "satellites") return <AISatellitesPanel />;
+  if (mode === "streams") return <AIStreamsPanel />;
+  if (mode === "economic") return <AIEconomicPanel />;
+  if (mode === "conflicts") return <AIConflictsPanel />;
+  if (mode === "alerts") return <AIAlertsPanel />;
+  if (mode === "osint") return <AIOSINTPanel />;
   return null;
 }

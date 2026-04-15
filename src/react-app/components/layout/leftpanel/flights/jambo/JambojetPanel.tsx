@@ -12,11 +12,10 @@ interface FlightData {
 }
 
 interface JambojetPanelProps {
-  theme?: "light" | "dark";
   flights?: FlightData[];
 }
 
-export function JambojetPanel({ theme = "dark", flights = [] }: JambojetPanelProps) {
+export function JambojetPanel({ flights = [] }: JambojetPanelProps) {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Jambojet</h3>

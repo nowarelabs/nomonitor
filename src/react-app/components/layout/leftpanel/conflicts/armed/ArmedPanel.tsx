@@ -1,8 +1,4 @@
-interface ArmedPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function ArmedPanel({ theme = "dark" }: ArmedPanelProps) {
+export function ArmedPanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Armed Conflicts</h3>

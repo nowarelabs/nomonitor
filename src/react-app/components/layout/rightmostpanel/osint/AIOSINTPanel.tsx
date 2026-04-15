@@ -1,8 +1,4 @@
-interface AIOSINTPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function AIOSINTPanel({ theme: _theme = "dark" }: AIOSINTPanelProps) {
+export function AIOSINTPanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">AI Assistant</h3>

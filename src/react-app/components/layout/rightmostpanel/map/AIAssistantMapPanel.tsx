@@ -1,8 +1,4 @@
-interface AIAssistantMapPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function AIAssistantMapPanel({ theme: _theme = "dark" }: AIAssistantMapPanelProps) {
+export function AIAssistantMapPanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">AI Assistant</h3>

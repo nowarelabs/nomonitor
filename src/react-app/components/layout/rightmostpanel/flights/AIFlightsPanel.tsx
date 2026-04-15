@@ -1,8 +1,4 @@
-interface AIFlightsPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function AIFlightsPanel({ theme = "dark" }: AIFlightsPanelProps) {
+export function AIFlightsPanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">AI Assistant</h3>

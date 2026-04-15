@@ -1,9 +1,5 @@
-interface KenyaMapPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function KenyaMapPanel({ theme = "dark" }: KenyaMapPanelProps) {
-  const isDark = theme === "dark";
+export function KenyaMapPanel() {
+  const isDark = true;
   return (
     <div className="p-4">
       <h3 className={`text-sm font-medium mb-3 ${isDark ? "text-white" : "text-gray-900"}`}>Kenya Map</h3>

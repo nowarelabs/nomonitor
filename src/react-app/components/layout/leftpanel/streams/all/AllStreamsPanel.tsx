@@ -1,8 +1,4 @@
-interface AllStreamsPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function AllStreamsPanel({ theme = "dark" }: AllStreamsPanelProps) {
+export function AllStreamsPanel() {
   const streams = [
     { name: "KTN News", status: "Live" },
     { name: "Citizen TV", status: "Live" },

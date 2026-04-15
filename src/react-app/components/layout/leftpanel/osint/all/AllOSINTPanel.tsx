@@ -1,8 +1,4 @@
-interface AllOSINTPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function AllOSINTPanel({ theme = "dark" }: AllOSINTPanelProps) {
+export function AllOSINTPanel() {
   const reports = [
     { source: "CIA", title: "Regional Assessment", date: "2024-01-15" },
     { source: "Military", title: "Force Deployment", date: "2024-01-14" },

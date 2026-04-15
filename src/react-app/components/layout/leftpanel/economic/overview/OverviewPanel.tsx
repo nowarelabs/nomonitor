@@ -1,8 +1,4 @@
-interface OverviewPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function OverviewPanel({ theme = "dark" }: OverviewPanelProps) {
+export function OverviewPanel() {
   const indicators = [
     { label: "GDP Growth", value: "5.2%" },
     { label: "Inflation", value: "4.3%" },

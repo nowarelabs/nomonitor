@@ -1,8 +1,4 @@
-interface MapConflictsPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function MapConflictsPanel({ theme = "dark" }: MapConflictsPanelProps) {
+export function MapConflictsPanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Conflict Markers</h3>

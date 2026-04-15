@@ -1,8 +1,4 @@
-interface TribalPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function TribalPanel({ theme = "dark" }: TribalPanelProps) {
+export function TribalPanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Tribal</h3>

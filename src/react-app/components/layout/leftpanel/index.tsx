@@ -51,19 +51,14 @@ import { MilitaryPanel } from "./osint/military/MilitaryPanel";
 import { PoliticalPanel } from "./osint/political/PoliticalPanel";
 import { EconomicOSINTPanel } from "./osint/economic/EconomicOSINTPanel";
 
-import { useAllFlights, useAirlineFlights, type FlightData } from "../../../hooks";
-
-interface PanelProps {
-  theme?: "light" | "dark";
-}
+import { useAllFlights, useAirlineFlights } from "../../../hooks";
 
 interface LeftPanelProps {
   mode: ViewMode;
   navId: string;
-  theme?: "light" | "dark";
 }
 
-function DefaultPanel({ theme }: PanelProps) {
+function DefaultPanel() {
   return (
     <div className="p-4">
       <p className="text-sm opacity-60">Select a navigation item</p>
@@ -71,7 +66,7 @@ function DefaultPanel({ theme }: PanelProps) {
   );
 }
 
-export function LeftPanel({ mode, navId, theme = "dark" }: LeftPanelProps): ReactNode {
+export function LeftPanel({ mode, navId }: LeftPanelProps): ReactNode {
   const { flights: allFlights } = useAllFlights();
   const { flights: kenyaFlights } = useAirlineFlights("KQ");
   const { flights: jamboFlights } = useAirlineFlights("JMB");
@@ -79,70 +74,70 @@ export function LeftPanel({ mode, navId, theme = "dark" }: LeftPanelProps): Reac
   const { flights: safarilinkFlights } = useAirlineFlights("XK");
 
   if (mode === "map") {
-    if (navId === "kenya") return <KenyaMapPanel theme={theme} />;
-    if (navId === "counties") return <CountiesPanel theme={theme} />;
-    if (navId === "airports") return <AirportsPanel theme={theme} />;
-    if (navId === "ports") return <PortsPanel theme={theme} />;
-    if (navId === "alerts") return <MapAlertsPanel theme={theme} />;
-    if (navId === "conflicts") return <MapConflictsPanel theme={theme} />;
-    if (navId === "flights") return <MapFlightsPanel theme={theme} flights={allFlights} />;
-    if (navId === "satellites") return <MapSatellitesPanel theme={theme} />;
+    if (navId === "kenya") return <KenyaMapPanel />;
+    if (navId === "counties") return <CountiesPanel />;
+    if (navId === "airports") return <AirportsPanel />;
+    if (navId === "ports") return <PortsPanel />;
+    if (navId === "alerts") return <MapAlertsPanel />;
+    if (navId === "conflicts") return <MapConflictsPanel />;
+    if (navId === "flights") return <MapFlightsPanel flights={allFlights} />;
+    if (navId === "satellites") return <MapSatellitesPanel />;
   }
   
   if (mode === "flights") {
-    if (navId === "all") return <AllFlightsPanel theme={theme} flights={allFlights} />;
-    if (navId === "kenya") return <KenyaAirwaysPanel theme={theme} flights={kenyaFlights} />;
-    if (navId === "jambo") return <JambojetPanel theme={theme} flights={jamboFlights} />;
-    if (navId === "fly540") return <Fly540Panel theme={theme} flights={fly540Flights} />;
-    if (navId === "safarilink") return <SafarilinkPanel theme={theme} flights={safarilinkFlights} />;
+    if (navId === "all") return <AllFlightsPanel flights={allFlights} />;
+    if (navId === "kenya") return <KenyaAirwaysPanel flights={kenyaFlights} />;
+    if (navId === "jambo") return <JambojetPanel flights={jamboFlights} />;
+    if (navId === "fly540") return <Fly540Panel flights={fly540Flights} />;
+    if (navId === "safarilink") return <SafarilinkPanel flights={safarilinkFlights} />;
   }
   
   if (mode === "satellites") {
-    if (navId === "all") return <AllSatellitesPanel theme={theme} />;
-    if (navId === "recon") return <ReconPanel theme={theme} />;
-    if (navId === "weather") return <WeatherPanel theme={theme} />;
-    if (navId === "comm") return <CommPanel theme={theme} />;
-    if (navId === "nav") return <NavigationNavPanel theme={theme} />;
+    if (navId === "all") return <AllSatellitesPanel />;
+    if (navId === "recon") return <ReconPanel />;
+    if (navId === "weather") return <WeatherPanel />;
+    if (navId === "comm") return <CommPanel />;
+    if (navId === "nav") return <NavigationNavPanel />;
   }
   
   if (mode === "streams") {
-    if (navId === "all") return <AllStreamsPanel theme={theme} />;
-    if (navId === "ktn") return <KTNPanel theme={theme} />;
-    if (navId === "citizen") return <CitizenPanel theme={theme} />;
-    if (navId === "bbc") return <BBCPanel theme={theme} />;
+    if (navId === "all") return <AllStreamsPanel />;
+    if (navId === "ktn") return <KTNPanel />;
+    if (navId === "citizen") return <CitizenPanel />;
+    if (navId === "bbc") return <BBCPanel />;
   }
   
   if (mode === "economic") {
-    if (navId === "overview") return <OverviewPanel theme={theme} />;
-    if (navId === "currency") return <CurrencyPanel theme={theme} />;
-    if (navId === "gdp") return <GDPPanel theme={theme} />;
-    if (navId === "trade") return <TradePanel theme={theme} />;
-    if (navId === "markets") return <MarketsPanel theme={theme} />;
+    if (navId === "overview") return <OverviewPanel />;
+    if (navId === "currency") return <CurrencyPanel />;
+    if (navId === "gdp") return <GDPPanel />;
+    if (navId === "trade") return <TradePanel />;
+    if (navId === "markets") return <MarketsPanel />;
   }
   
   if (mode === "conflicts") {
-    if (navId === "all") return <AllConflictsPanel theme={theme} />;
-    if (navId === "armed") return <ArmedPanel theme={theme} />;
-    if (navId === "protest") return <ProtestPanel theme={theme} />;
-    if (navId === "tribal") return <TribalPanel theme={theme} />;
-    if (navId === "resource") return <ResourceConflictPanel theme={theme} />;
+    if (navId === "all") return <AllConflictsPanel />;
+    if (navId === "armed") return <ArmedPanel />;
+    if (navId === "protest") return <ProtestPanel />;
+    if (navId === "tribal") return <TribalPanel />;
+    if (navId === "resource") return <ResourceConflictPanel />;
   }
   
   if (mode === "alerts") {
-    if (navId === "all") return <AllAlertsPanel theme={theme} />;
-    if (navId === "critical") return <CriticalAlertsPanel theme={theme} />;
-    if (navId === "high") return <HighAlertsPanel theme={theme} />;
-    if (navId === "medium") return <MediumAlertsPanel theme={theme} />;
-    if (navId === "low") return <LowAlertsPanel theme={theme} />;
+    if (navId === "all") return <AllAlertsPanel />;
+    if (navId === "critical") return <CriticalAlertsPanel />;
+    if (navId === "high") return <HighAlertsPanel />;
+    if (navId === "medium") return <MediumAlertsPanel />;
+    if (navId === "low") return <LowAlertsPanel />;
   }
   
   if (mode === "osint") {
-    if (navId === "all") return <AllOSINTPanel theme={theme} />;
-    if (navId === "cia") return <CIAPanel theme={theme} />;
-    if (navId === "military") return <MilitaryPanel theme={theme} />;
-    if (navId === "political") return <PoliticalPanel theme={theme} />;
-    if (navId === "economic") return <EconomicOSINTPanel theme={theme} />;
+    if (navId === "all") return <AllOSINTPanel />;
+    if (navId === "cia") return <CIAPanel />;
+    if (navId === "military") return <MilitaryPanel />;
+    if (navId === "political") return <PoliticalPanel />;
+    if (navId === "economic") return <EconomicOSINTPanel />;
   }
   
-  return <DefaultPanel theme={theme} />;
+  return <DefaultPanel />;
 }

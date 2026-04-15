@@ -1,8 +1,4 @@
-interface TradePanelProps {
-  theme?: "light" | "dark";
-}
-
-export function TradePanel({ theme = "dark" }: TradePanelProps) {
+export function TradePanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Trade</h3>

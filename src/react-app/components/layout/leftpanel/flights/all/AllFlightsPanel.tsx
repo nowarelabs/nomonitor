@@ -12,11 +12,10 @@ interface FlightData {
 }
 
 interface AllFlightsPanelProps {
-  theme?: "light" | "dark";
   flights?: FlightData[];
 }
 
-export function AllFlightsPanel({ theme = "dark", flights = [] }: AllFlightsPanelProps) {
+export function AllFlightsPanel({ flights = [] }: AllFlightsPanelProps) {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">All Flights</h3>

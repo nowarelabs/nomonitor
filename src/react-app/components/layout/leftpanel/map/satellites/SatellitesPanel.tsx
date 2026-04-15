@@ -1,8 +1,4 @@
-interface SatellitesPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function SatellitesPanel({ theme = "dark" }: SatellitesPanelProps) {
+export function SatellitesPanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Satellite Markers</h3>

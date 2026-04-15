@@ -1,8 +1,4 @@
-interface AllConflictsPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function AllConflictsPanel({ theme = "dark" }: AllConflictsPanelProps) {
+export function AllConflictsPanel() {
   const incidents = [
     { type: "Tribal", location: "Marsabit", date: "2024-01-15" },
     { type: "Protest", location: "Kisumu", date: "2024-01-14" },

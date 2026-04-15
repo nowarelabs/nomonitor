@@ -1,8 +1,4 @@
-interface PortsPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function PortsPanel({ theme = "dark" }: PortsPanelProps) {
+export function PortsPanel() {
   const ports = [
     { name: "Mombasa Port", type: "Seaport" },
     { name: "Lamu Port", type: "Seaport" },

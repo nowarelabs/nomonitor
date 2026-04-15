@@ -1,8 +1,4 @@
-interface ResourceConflictPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function ResourceConflictPanel({ theme = "dark" }: ResourceConflictPanelProps) {
+export function ResourceConflictPanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Resource Conflicts</h3>

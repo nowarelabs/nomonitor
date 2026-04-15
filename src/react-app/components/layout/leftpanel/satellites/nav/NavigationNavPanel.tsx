@@ -1,8 +1,4 @@
-interface NavigationNavPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function NavigationNavPanel({ theme = "dark" }: NavigationNavPanelProps) {
+export function NavigationNavPanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Navigation</h3>

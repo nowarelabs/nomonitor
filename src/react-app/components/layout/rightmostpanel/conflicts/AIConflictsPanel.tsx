@@ -1,8 +1,4 @@
-interface AIConflictsPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function AIConflictsPanel({ theme = "dark" }: AIConflictsPanelProps) {
+export function AIConflictsPanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">AI Assistant</h3>

@@ -1,8 +1,4 @@
-interface AIEconomicPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function AIEconomicPanel({ theme = "dark" }: AIEconomicPanelProps) {
+export function AIEconomicPanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">AI Assistant</h3>

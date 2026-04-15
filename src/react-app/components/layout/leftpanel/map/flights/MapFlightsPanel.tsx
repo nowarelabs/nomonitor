@@ -12,7 +12,6 @@ interface FlightData {
 }
 
 interface MapFlightsPanelProps {
-  theme?: "light" | "dark";
   flights?: FlightData[];
   showFlightPaths?: boolean;
   selectedAirport?: string;
@@ -28,7 +27,6 @@ const AIRPORTS = [
 ];
 
 export function MapFlightsPanel({ 
-  theme = "dark", 
   flights = [],
   showFlightPaths = true,
   selectedAirport = "ALL",

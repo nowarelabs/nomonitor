@@ -1,8 +1,4 @@
-interface AirportsPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function AirportsPanel({ theme = "dark" }: AirportsPanelProps) {
+export function AirportsPanel() {
   const airports = [
     { code: "JKIA", name: "Jomo Kenyatta International" },
     { code: "MBA", name: "Mombasa Moi International" },

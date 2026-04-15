@@ -12,11 +12,10 @@ interface FlightData {
 }
 
 interface Fly540PanelProps {
-  theme?: "light" | "dark";
   flights?: FlightData[];
 }
 
-export function Fly540Panel({ theme = "dark", flights = [] }: Fly540PanelProps) {
+export function Fly540Panel({ flights = [] }: Fly540PanelProps) {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Fly540</h3>

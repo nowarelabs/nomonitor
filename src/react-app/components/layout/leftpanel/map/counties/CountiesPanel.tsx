@@ -1,8 +1,4 @@
-interface CountiesPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function CountiesPanel({ theme = "dark" }: CountiesPanelProps) {
+export function CountiesPanel() {
   const counties = ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Eldoret", "Malindi", "Kitale", "Garissa"];
   
   return (

@@ -12,11 +12,10 @@ interface FlightData {
 }
 
 interface SafarilinkPanelProps {
-  theme?: "light" | "dark";
   flights?: FlightData[];
 }
 
-export function SafarilinkPanel({ theme = "dark", flights = [] }: SafarilinkPanelProps) {
+export function SafarilinkPanel({ flights = [] }: SafarilinkPanelProps) {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Safarilink</h3>

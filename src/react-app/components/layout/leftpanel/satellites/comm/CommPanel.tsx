@@ -1,8 +1,4 @@
-interface CommPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function CommPanel({ theme = "dark" }: CommPanelProps) {
+export function CommPanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Communication</h3>

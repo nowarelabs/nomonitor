@@ -1,8 +1,4 @@
-interface AllAlertsPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function AllAlertsPanel({ theme = "dark" }: AllAlertsPanelProps) {
+export function AllAlertsPanel() {
   const alerts = [
     { severity: "Critical", title: "Security Alert in Mandera", time: "10:30" },
     { severity: "High", title: "Weather Warning in Western", time: "09:15" },

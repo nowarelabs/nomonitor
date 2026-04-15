@@ -1,8 +1,4 @@
-interface ReconPanelProps {
-  theme?: "light" | "dark";
-}
-
-export function ReconPanel({ theme = "dark" }: ReconPanelProps) {
+export function ReconPanel() {
   return (
     <div className="p-4">
       <h3 className="text-sm font-medium mb-3">Reconnaissance</h3>
