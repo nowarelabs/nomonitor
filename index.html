@@ -1,14 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Vite + React + TS</title>
-	</head>
 
-	<body>
-		<div id="root"></div>
-		<script type="module" src="/src/react-app/main.tsx"></script>
-	</body>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Leyo</title>
+</head>
+
+<body>
+	<div id="root"></div>
+	<script type="module">
+		import React from "react";
+		import ReactDOM from "react-dom/client";
+		import { NuqsAdapter } from "nuqs/adapters/react";
+		import App from "/src/react-app/App.tsx";
+		import "/src/react-app/index.css";
+
+		ReactDOM.createRoot(document.getElementById("root")).render(
+			React.createElement(NuqsAdapter, null,
+				React.createElement(App)
+			)
+		);
+	</script>
+</body>
+
 </html>

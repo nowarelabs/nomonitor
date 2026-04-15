@@ -2,9 +2,17 @@
 	"name": "nomonitor",
 	"description": "Nomonitor is an open source monitoring tool for developers",
 	"dependencies": {
+		"@tailwindcss/vite": "^4.2.2",
+		"@types/leaflet": "^1.9.21",
 		"hono": "4.11.1",
+		"leaflet": "^1.9.4",
+		"lucide-react": "^1.8.0",
+		"nuqs": "^2.8.9",
 		"react": "19.2.1",
-		"react-dom": "19.2.1"
+		"react-dom": "19.2.1",
+		"react-leaflet": "^5.0.0",
+		"recharts": "^3.8.1",
+		"tailwindcss": "^4.2.2"
 	},
 	"devDependencies": {
 		"@cloudflare/vite-plugin": "1.15.3",
